@@ -1,0 +1,21 @@
+# 18 - Escreva um algoritmo que leia certa quantidade de números e imprima o maior deles e quantas vezes
+# o maior número foi lido. A quantidade de números a serem lidos deve ser fornecida pelo usuário.
+
+quantidade = int(input('Informe a quantidade de números: '))
+
+if quantidade <= 0:
+    print('quantidade invalida')
+
+maior_numero = 0
+qtd_vezes = 0
+
+for i in range(quantidade):
+    num = float(input(f'Informe o {i+1}º número: '))
+
+    if i == 0 or num > maior_numero:
+        maior_numero = num
+        qtd_vezes = 1
+    elif num == maior_numero:
+        qtd_vezes = qtd_vezes + 1
+
+print(f'O maior número digitado é {maior_numero} e ele foi lido {qtd_vezes}')
